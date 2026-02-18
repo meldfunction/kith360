@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing & Revenue | Kith</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#7A9B76;--deep-green:#5A7A56;--clay:#C95D3D;--terracotta:#E87A5D;--warm-white:#FFFEF9;--cream:#FFF8F0;--charcoal:#2B2B2B}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--charcoal);line-height:1.6}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
+
+.site-header{background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);padding:1.5rem 2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.header-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.logo-link{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--warm-white)}
+.logo-svg{width:40px;height:40px}
+.brand-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;letter-spacing:1px}
+.nav-links{display:flex;gap:1rem;flex-wrap:wrap}
+.nav-link{color:var(--warm-white);text-decoration:none;font-weight:500;padding:0.5rem 1.5rem;border-radius:25px;transition:all 0.3s ease;background:rgba(255,255,255,0.1)}
+.nav-link:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
+.nav-link.active{background:var(--warm-white);color:var(--sage)}
+
+.hero{padding:8rem 2rem 6rem;background:linear-gradient(135deg,var(--cream),#FFE8D6);text-align:center}
+.hero h1{font-size:clamp(3rem,7vw,5rem);color:var(--clay);margin-bottom:2rem;font-style:italic}
+.hero p{font-size:1.4rem;max-width:800px;margin:0 auto;opacity:0.9;line-height:1.7}
+
+.content{padding:6rem 2rem}
+.container{max-width:900px;margin:0 auto}
+.content h2{font-size:2.5rem;color:var(--clay);margin:3rem 0 1.5rem;font-style:italic}
+.content p{font-size:1.15rem;line-height:1.8;margin-bottom:1.5rem}
+.content strong{color:var(--clay)}
+
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin:3rem 0}
+.pricing-card{background:var(--cream);padding:3rem;border-radius:25px;border-top:8px solid var(--sage);transition:all 0.3s ease}
+.pricing-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+.pricing-card.premium{border-top-color:var(--clay)}
+.price-tag{font-size:3rem;font-weight:700;color:var(--clay);margin:1rem 0}
+.price-period{font-size:1.2rem;opacity:0.7;font-weight:400}
+.pricing-card h3{font-size:2rem;color:var(--clay);margin-bottom:1rem}
+.pricing-card p{font-size:1.05rem;line-height:1.7;margin-bottom:1.5rem}
+.pricing-card ul{margin:1.5rem 0;padding-left:0;list-style:none}
+.pricing-card li{padding:0.7rem 0;padding-left:1.5rem;position:relative;font-size:1.05rem}
+.pricing-card li:before{content:"✓";position:absolute;left:0;color:var(--clay);font-weight:700}
+
+.highlight-box{background:linear-gradient(135deg,var(--sage),var(--deep-green));color:var(--warm-white);padding:4rem;border-radius:25px;margin:4rem 0;text-align:center}
+.highlight-box h3{font-size:2.5rem;color:var(--warm-white);margin-bottom:1.5rem}
+.highlight-box p{font-size:1.2rem;line-height:1.8;opacity:0.95;margin-bottom:1rem}
+
+.transparency{background:var(--cream);padding:6rem 2rem;margin:4rem 0}
+.transparency h2{font-size:2.5rem;color:var(--clay);text-align:center;margin-bottom:3rem;font-style:italic}
+.transparency-content{max-width:800px;margin:0 auto}
+.transparency-content p{font-size:1.15rem;line-height:1.8;margin-bottom:1.5rem}
+.transparency-content h4{font-size:1.5rem;color:var(--clay);margin:2rem 0 1rem}
+
+.values{padding:4rem 0}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin:3rem 0}
+.value-card{background:var(--cream);padding:2.5rem;border-radius:20px;border-left:5px solid var(--sage)}
+.value-card h4{font-size:1.5rem;color:var(--clay);margin-bottom:1rem}
+.value-card p{font-size:1.05rem;line-height:1.7;margin:0}
+
+.cta{padding:6rem 2rem;background:linear-gradient(135deg,var(--clay),var(--terracotta));color:var(--warm-white);text-align:center}
+.cta h2{font-size:2.8rem;margin-bottom:1.5rem;color:var(--warm-white)}
+.cta p{font-size:1.2rem;margin-bottom:2rem;opacity:0.95}
+.cta-button{display:inline-block;padding:1.2rem 3rem;background:var(--warm-white);color:var(--clay);text-decoration:none;border-radius:50px;font-weight:700;font-size:1.2rem;transition:all 0.3s ease}
+.cta-button:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
+
+@media (max-width:768px){
+.header-content{flex-direction:column}
+.pricing-grid,.values-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-content">
+    <a href="index.html" class="logo-link">
+      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="50" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="80" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="35" cy="55" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="65" cy="55" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="50" cy="45" r="5" fill="#FFFEF9"/>
+      </svg>
+      <span class="brand-name">KITH</span>
+      <span style="font-size:0.7rem;opacity:0.7;margin-left:0.3rem;font-weight:400">by The Village</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="why.html" class="nav-link">Why</a>
+      <a href="how.html" class="nav-link">How It Works</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Pricing & Revenue</h1>
+  <p>Transparent pricing. No hidden fees. No ads. No selling your data.</p>
+</section>
+
+<section class="content">
+  <div class="container">
+    
+    <div class="highlight-box">
+      <h3>Circle Coordination: Free Forever</h3>
+      <p>Time tracking, skill matching, messaging, balance management—all free. We make money through optional services, not by charging you to coordinate with friends.</p>
+    </div>
+    
+    <h2>What You Pay</h2>
+    
+    <div class="pricing-grid">
+      
+      <div class="pricing-card">
+        <h3>Circle Coordination</h3>
+        <div class="price-tag">$0<span class="price-period">/month</span></div>
+        <p><strong>Free forever.</strong> No limits. No trials. No credit card required.</p>
+        <ul>
+          <li>Unlimited circle members (up to 15)</li>
+          <li>Unlimited exchanges & tracking</li>
+          <li>Unlimited messaging</li>
+          <li>Full time credit system</li>
+          <li>Skill matching & notifications</li>
+          <li>Privacy-protected data</li>
+        </ul>
+      </div>
+      
+      <div class="pricing-card">
+        <h3>Provider Network</h3>
+        <div class="price-tag">5-15%<span class="price-period">platform fee</span></div>
+        <p><strong>Only when you hire.</strong> Fee added to what you pay (not taken from provider).</p>
+        <ul>
+          <li>Background-checked providers</li>
+          <li>Verified credentials</li>
+          <li>Insurance verified</li>
+          <li>Secure payments (Stripe)</li>
+          <li>24/7 support</li>
+          <li>Dispute resolution</li>
+        </ul>
+        <p style="margin-top:1.5rem;font-size:0.95rem;opacity:0.8"><strong>Example:</strong> Hire sitter at $20/hr for 4 hours = $80 + $8 fee (10%) = $88 total</p>
+      </div>
+      
+      <div class="pricing-card premium">
+        <h3>Premium (Coming Soon)</h3>
+        <div class="price-tag">TBD<span class="price-period">/month</span></div>
+        <p><strong>Optional.</strong> Advanced features for power users.</p>
+        <ul>
+          <li>Larger circles (15+ people)</li>
+          <li>Advanced analytics</li>
+          <li>Priority support</li>
+          <li>Custom integrations</li>
+          <li>Enterprise features</li>
+        </ul>
+        <p style="margin-top:1.5rem;font-size:0.95rem;opacity:0.8">We'll announce pricing before launch. Basic Kith stays free.</p>
+      </div>
+      
+    </div>
+    
+  </div>
+</section>
+
+<section class="transparency">
+  <h2>How We Make Money</h2>
+  <div class="transparency-content">
+    
+    <h4>1. Provider Network Fees (5-15%)</h4>
+    <p>When you hire from our vetted provider network, we charge a platform fee. This covers:</p>
+    <ul>
+      <li>Background checks (state & federal databases)</li>
+      <li>Reference verification</li>
+      <li>Insurance verification</li>
+      <li>Payment processing (Stripe fees)</li>
+      <li>Customer support</li>
+      <li>Ongoing provider monitoring</li>
+    </ul>
+    <p><strong>Why we charge you (not the provider):</strong> Other platforms take 20-35% from providers. We add 5-15% to what you pay. Providers keep their full rate. Everyone's happier.</p>
+    
+    <h4>2. Premium Features (Future)</h4>
+    <p>Optional paid tier for power users who want:</p>
+    <ul>
+      <li>Larger networks (coordinate with 20+ people)</li>
+      <li>Advanced analytics (track patterns, optimize balance)</li>
+      <li>Priority support (faster response times)</li>
+      <li>Custom integrations (calendar sync, etc.)</li>
+    </ul>
+    <p><strong>We'll announce pricing before launch.</strong> Circle coordination stays free regardless.</p>
+    
+    <h4>3. Enterprise Services (B2B)</h4>
+    <p>Companies that want to offer Kith to employees:</p>
+    <ul>
+      <li>Corporate childcare coordination</li>
+      <li>Employee resource groups</li>
+      <li>Community building tools</li>
+    </ul>
+    <p><strong>This doesn't affect individual users.</strong> Your circle stays private. Your data stays yours.</p>
+    
+  </div>
+</section>
+
+<section class="content">
+  <div class="container">
+    
+    <h2>What We Don't Do</h2>
+    
+    <div class="values">
+      <div class="values-grid">
+        
+        <div class="value-card">
+          <h4>No Selling Your Data</h4>
+          <p>We never sell your information to advertisers, data brokers, or third parties. Your exchanges are private. Your circle is yours.</p>
+        </div>
+        
+        <div class="value-card">
+          <h4>No Ads</h4>
+          <p>We don't show you ads. Ever. Our business model is optional paid services, not attention extraction.</p>
+        </div>
+        
+        <div class="value-card">
+          <h4>No Bait & Switch</h4>
+          <p>Circle coordination is free forever. We won't suddenly start charging for basic features. We're building for the long term.</p>
+        </div>
+        
+        <div class="value-card">
+          <h4>No Hidden Fees</h4>
+          <p>Provider network fee? Clearly displayed before you hire. Premium features? Priced transparently. No surprises.</p>
+        </div>
+        
+        <div class="value-card">
+          <h4>No Extraction</h4>
+          <p>We're not trying to maximize "engagement" or keep you scrolling. We want you to coordinate help and get back to your life.</p>
+        </div>
+        
+        <div class="value-card">
+          <h4>No Surveillance</h4>
+          <p>We don't track your location when app is closed. We don't read your messages. We don't monitor your browsing. Privacy by design.</p>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="highlight-box">
+      <h3>Our Promise</h3>
+      <p>We built Kith because we're frustrated with platforms that treat users as products. You're not the product. You're the customer.</p>
+      <p>Circle coordination stays free. Optional services are priced fairly. Your data stays yours. Your circle stays private.</p>
+      <p style="margin-top:2rem;font-weight:700">That's our business model. That's our commitment.</p>
+    </div>
+    
+  </div>
+</section>
+
+<section class="transparency">
+  <h2>Why Not Charge Everyone?</h2>
+  <div class="transparency-content">
+    
+    <p><strong>We could charge $10/month for circle coordination.</strong> Lots of apps do. But we won't. Here's why:</p>
+    
+    <p><strong>1. Circles need critical mass.</strong> If only people who can afford $10/month join, you can't build your circle. Your neighbor might not have $10. Your coworker might not. Suddenly you're back to doing it alone.</p>
+    
+    <p><strong>2. Mutual aid shouldn't require money.</strong> The whole point is reducing financial burden by sharing help. Charging everyone to coordinate defeats the purpose.</p>
+    
+    <p><strong>3. We can build sustainably without it.</strong> Provider network fees + premium features + enterprise services = enough revenue to pay our team and grow the platform.</p>
+    
+    <p><strong>4. Free coordination aligns incentives.</strong> We succeed when your circle thrives. Not when we extract maximum subscription revenue. Better alignment = better product.</p>
+    
+    <p style="margin-top:2rem;font-size:1.2rem;font-weight:600;color:var(--clay)">Most people use Kith for free. Some pay for providers or premium features. That subsidizes free circle coordination for everyone. It works.</p>
+    
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Join the Free Beta</h2>
+  <p>Circle coordination is free. Always will be. Join the waitlist to get early access.</p>
+  <a href="index.html#download" class="cta-button">Join Waitlist →</a>
+</section>
+
+</body>
+</html>

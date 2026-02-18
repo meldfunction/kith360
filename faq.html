@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frequently Asked Questions | Kith</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#7A9B76;--deep-green:#5A7A56;--clay:#C95D3D;--terracotta:#E87A5D;--warm-white:#FFFEF9;--cream:#FFF8F0;--charcoal:#2B2B2B}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--charcoal);line-height:1.6}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
+.site-header{background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);padding:1.5rem 2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.header-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.logo-link{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--warm-white)}
+.logo-svg{width:40px;height:40px}
+.brand-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;letter-spacing:1px}
+.nav-links{display:flex;gap:1rem}
+.nav-link{color:var(--warm-white);text-decoration:none;font-weight:500;padding:0.5rem 1.5rem;border-radius:25px;transition:all 0.3s ease;background:rgba(255,255,255,0.1)}
+.nav-link:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
+.nav-link.active{background:var(--warm-white);color:var(--sage)}
+.hero{padding:8rem 2rem 6rem;background:linear-gradient(135deg,var(--cream),#FFE8D6);text-align:center}
+.hero h1{font-size:clamp(3rem,7vw,5rem);color:var(--clay);margin-bottom:2rem;font-style:italic}
+.hero p{font-size:1.4rem;max-width:800px;margin:0 auto;opacity:0.9}
+.content{padding:6rem 2rem}
+.content .container{max-width:900px;margin:0 auto}
+.content h2{font-size:2.5rem;color:var(--clay);margin:3rem 0 1.5rem;font-style:italic}
+.content strong{color:var(--clay)}
+.faq-section{margin:3rem 0}
+.faq-item{background:var(--cream);border-radius:15px;margin-bottom:1.5rem;border-left:5px solid var(--sage);overflow:hidden}
+.faq-question{padding:1.5rem 2rem;font-size:1.3rem;font-weight:700;color:var(--clay);cursor:pointer;list-style:none}
+.faq-question:hover{background:rgba(201,93,61,0.05)}
+.faq-question::-webkit-details-marker{display:none}
+.faq-answer{padding:0 2rem 2rem 2rem;font-size:1.1rem;line-height:1.8}
+.faq-answer p{margin-bottom:1rem}
+.faq-answer ul{margin:1rem 0 1rem 2rem}
+.faq-answer li{margin-bottom:0.5rem}
+.faq-answer strong{color:var(--clay)}
+.faq-answer a{color:var(--clay);font-weight:700;text-decoration:underline}
+.cta{padding:6rem 2rem;background:linear-gradient(135deg,var(--clay),var(--terracotta));color:var(--warm-white);text-align:center}
+.cta h2{font-size:3rem;margin-bottom:1.5rem}
+.cta p{font-size:1.3rem;margin-bottom:2rem;opacity:0.95}
+.cta-button{display:inline-block;padding:1.2rem 3rem;background:var(--warm-white);color:var(--clay);text-decoration:none;border-radius:50px;font-weight:700;font-size:1.2rem;transition:all 0.3s ease}
+.cta-button:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+@media (max-width:768px){.header-content{flex-direction:column;gap:1rem}.nav-links{flex-wrap:wrap;justify-content:center}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-content">
+    <a href="index.html" class="logo-link">
+      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="30" r="8" fill="#FFFEF9"/>
+        <circle cx="30" cy="60" r="6" fill="#FFFEF9" opacity="0.8"/>
+        <circle cx="70" cy="60" r="6" fill="#FFFEF9" opacity="0.8"/>
+        <circle cx="50" cy="80" r="5" fill="#FFFEF9" opacity="0.6"/>
+        <circle cx="20" cy="80" r="4" fill="#FFFEF9" opacity="0.5"/>
+        <circle cx="80" cy="80" r="4" fill="#FFFEF9" opacity="0.5"/>
+        <line x1="50" y1="38" x2="30" y2="54" stroke="#FFFEF9" stroke-width="2" opacity="0.6"/>
+        <line x1="50" y1="38" x2="70" y2="54" stroke="#FFFEF9" stroke-width="2" opacity="0.6"/>
+        <line x1="30" y1="66" x2="50" y2="75" stroke="#FFFEF9" stroke-width="1.5" opacity="0.4"/>
+        <line x1="70" y1="66" x2="50" y2="75" stroke="#FFFEF9" stroke-width="1.5" opacity="0.4"/>
+        <line x1="30" y1="66" x2="20" y2="76" stroke="#FFFEF9" stroke-width="1.5" opacity="0.3"/>
+        <line x1="70" y1="66" x2="80" y2="76" stroke="#FFFEF9" stroke-width="1.5" opacity="0.3"/>
+      </svg>
+      <span class="brand-name">KITH</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="why.html" class="nav-link">Why</a>
+      <a href="faq.html" class="nav-link active">FAQ</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Frequently Asked Questions</h1>
+  <p>Everything you need to know about how Kith works</p>
+</section>
+
+<section class="content">
+  <div class="container">
+    
+    <h2>Getting Started</h2>
+    <div class="faq-section">
+      <details class="faq-item">
+        <summary class="faq-question">How do I join Kith?</summary>
+        <div class="faq-answer">
+          <p><strong>Right now:</strong> Join the waitlist through our website. Scan the QR code or enter your email. You'll get a link to a quick survey (5 minutes) about your childcare needs, skills, and location.</p>
+          <p><strong>Once approved for beta:</strong> We'll send you an invite link to download the app (iOS or Android). You'll complete onboarding (another 10 minutes) where you invite your first few trusted people and set up your profile.</p>
+          <p><strong>Timeline:</strong> Private beta launches in 2026 for select cities. Public launch in 2027.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What domains does Kith support?</summary>
+        <div class="faq-answer">
+          <p><strong>Currently available (Alpha):</strong> Childcare coordination—babysitting, school pickups, playdates, and emergency backup.</p>
+          <p><strong>Coming in 2026-2027:</strong></p>
+          <ul>
+            <li><strong>Learning (2026):</strong> Tutoring, skill-sharing, enrichment classes within your circle</li>
+            <li><strong>Food (2027):</strong> Meal prep circles, bulk grocery runs, cooking together</li>
+            <li><strong>Self-Care (2027):</strong> Yoga accountability, creative time, wellness circles</li>
+            <li><strong>Eldercare (2027):</strong> Help with aging parents—appointments, companionship, errands</li>
+          </ul>
+          <p><strong>The key insight:</strong> 1 hour = 1 credit, regardless of domain. Help with childcare today, use that credit for eldercare next month. Your time has value across your entire life.</p>
+          <p><a href="domains.html">Learn more about all five domains →</a></p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What if my friends/family aren't on Kith yet?</summary>
+        <div class="faq-answer">
+          <p>You can invite them! Kith works best when you bring your existing network onto the platform. During onboarding, you'll be able to send invite links to the 5-10 people you want to coordinate with most.</p>
+          <p>If they're not ready to join, you can still use Kith to track exchanges manually (you watched their kid for 4 hours → you note it in the app). When they join later, the history syncs.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How much does it cost?</summary>
+        <div class="faq-answer">
+          <p><strong>Network coordination: Free forever.</strong> Time banking, skill matching, messaging, circle management—all free.</p>
+          <p><strong>Optional paid services:</strong></p>
+          <ul>
+            <li>Pay network members directly: 5% platform fee</li>
+            <li>Hire from vetted provider network: 15% platform fee</li>
+            <li>Premium features (future): Advanced analytics, larger networks, priority support</li>
+          </ul>
+          <p>Most families use Kith for free. <a href="revenue.html">See full pricing →</a></p>
+        </div>
+      </details>
+    </div>
+
+    <h2>Trust & Safety</h2>
+    <div class="faq-section">
+      <details class="faq-item">
+        <summary class="faq-question">How do I know I can trust people on Kith?</summary>
+        <div class="faq-answer">
+          <p><strong>You build your own network.</strong> Kith isn't like other apps where you're matched with strangers. You invite people you already know and trust. They invite people they know and trust. Networks grow through vouching, not algorithms.</p>
+          <p><strong>Trust signals:</strong></p>
+          <ul>
+            <li>See who vouched for someone (mutual connections)</li>
+            <li>View exchange history (do they follow through?)</li>
+            <li>Read private feedback from mutual friends</li>
+            <li>See reciprocity balance (are they giving and receiving fairly?)</li>
+          </ul>
+          <p>You're always in control of who's in your circle. Remove anyone, anytime.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What if someone takes advantage of the system?</summary>
+        <div class="faq-answer">
+          <p><strong>We protect against exploitation through:</strong></p>
+          <ul>
+            <li><strong>Reciprocity tracking:</strong> If someone consistently takes without giving, the system flags it</li>
+            <li><strong>Burnout warnings:</strong> If you're giving too much, we warn you before you hit empty</li>
+            <li><strong>Private feedback:</strong> Report issues to admins without public drama</li>
+            <li><strong>Removal tools:</strong> Anyone can remove anyone from their circle, no questions asked</li>
+            <li><strong>Extended credit limits:</strong> You can't rack up infinite debt. System limits how much you can owe before requiring reciprocity</li>
+          </ul>
+          <p>Remember: Kith is built on trusted networks. If someone's consistently taking advantage, they'll lose access as people remove them. Social accountability works.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What happens if there's a dispute?</summary>
+        <div class="faq-answer">
+          <p><strong>Most disputes resolve through conversation.</strong> Kith provides tools to help:</p>
+          <ul>
+            <li><strong>Exchange logs:</strong> Both parties can see what was agreed vs. what happened</li>
+            <li><strong>Mediation requests:</strong> Invite a mutual friend to help mediate</li>
+            <li><strong>Credit adjustments:</strong> Both parties can propose adjustments if the exchange didn't go as planned</li>
+          </ul>
+          <p><strong>For serious issues:</strong> Contact our support team. We review both sides, check exchange history, and can facilitate resolution. In extreme cases, we can suspend accounts pending investigation.</p>
+          <p><strong>For paid services:</strong> Standard protections apply. If you paid for childcare and it didn't happen, we refund you. If a provider claims non-payment, we check the logs. Clear accountability on both sides.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What about insurance and liability?</summary>
+        <div class="faq-answer">
+          <p><strong>For unpaid exchanges (time banking):</strong> Kith is a coordination platform. We don't provide insurance for informal exchanges between friends. That's between you and your network—same as if you arranged it via text.</p>
+          <p><strong>For paid services through our provider network:</strong></p>
+          <ul>
+            <li>Providers carry liability insurance (we verify this during vetting)</li>
+            <li>Background checks on all professional providers</li>
+            <li>Service guarantees: If service isn't provided as agreed, you get refunded</li>
+            <li>Incident reporting: Any issues are documented and reviewed</li>
+          </ul>
+          <p><strong>For direct member-to-member paid services:</strong> We facilitate payment but don't provide insurance. Members are responsible for their own coverage. We strongly recommend discussing expectations and safety protocols before any childcare arrangement.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Can I do background checks on network members?</summary>
+        <div class="faq-answer">
+          <p><strong>For people you invite:</strong> These are your friends, family, neighbors—people you already know. We assume you're making trust decisions based on real relationships, not background checks.</p>
+          <p><strong>For extended network (friends-of-friends):</strong> You can see who vouched for them and their exchange history. Trust is built through social proof and track record.</p>
+          <p><strong>For professional providers in our vetted network:</strong> Yes. We run comprehensive background checks, verify licenses, check references, and require proof of insurance. These results are available to members before booking.</p>
+        </div>
+      </details>
+    </div>
+
+    <h2>How It Works</h2>
+    <div class="faq-section">
+      <details class="faq-item">
+        <summary class="faq-question">What does "time banking" actually mean?</summary>
+        <div class="faq-answer">
+          <p>Simple: <strong>1 hour of help = 1 hour of credit</strong>, regardless of what kind of help.</p>
+          <p>You watch someone's kids for 4 hours = you earn 4 time credits. Later, someone helps you move furniture for 2 hours = you spend 2 credits. Your balance: 2 credits remaining.</p>
+          <p><strong>Key principle:</strong> All hours are valued equally. An hour of your time is worth an hour of anyone else's time. This prevents the "market rate" problem where some skills are valued over others.</p>
+          <p>Kith tracks this automatically. You don't do math or bookkeeping—just mark exchanges complete and we handle the rest.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What if someone can't return the favor?</summary>
+        <div class="faq-answer">
+          <p><strong>Reciprocity doesn't have to be direct.</strong> You helped Sarah with childcare. Sarah doesn't owe you childcare back. She could:</p>
+          <ul>
+            <li>Help you with job interview prep (she's in HR)</li>
+            <li>Teach your kid guitar (she plays in a band)</li>
+            <li>Give you rides to the airport (she works from home)</li>
+            <li>Help someone else in the network who can help you</li>
+          </ul>
+          <p><strong>Credit extends through your circle.</strong> If Sarah can't help you directly, she might help Marcus, who helps you. The network balances itself.</p>
+          <p>That said: if someone consistently can't or won't reciprocate, the system will flag it and suggest reducing exchanges with them.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How big should my circle be?</summary>
+        <div class="faq-answer">
+          <p><strong>Sweet spot: 10-15 active people.</strong></p>
+          <p>Research shows this is the number of people you can meaningfully coordinate with. Too few and you don't have coverage when you need it. Too many and coordination becomes overwhelming.</p>
+          <p>Start with 5-8 people you trust most. Grow gradually as needs arise. Quality over quantity—always.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What if I live somewhere rural without many families nearby?</summary>
+        <div class="faq-answer">
+          <p>Kith works differently in rural vs. urban settings, but it still works:</p>
+          <p><strong>Rural advantage:</strong> People often already know each other and have informal helping networks. Kith just adds structure and tracking so you don't have to remember who owes what.</p>
+          <p><strong>Consider:</strong> Your circle might include people 20 minutes away instead of 5. Skill exchanges (teaching, advice, digital help) work great even without proximity. And longer-term exchanges (watching kids for a weekend, not just 2 hours) might be more common.</p>
+          <p>We're designing the app to work for both dense urban networks and sparse rural ones.</p>
+        </div>
+      </details>
+    </div>
+
+    <h2>Privacy & Data</h2>
+    <div class="faq-section">
+      <details class="faq-item">
+        <summary class="faq-question">What data do you collect?</summary>
+        <div class="faq-answer">
+          <p><strong>We collect only what's needed to run the service:</strong></p>
+          <ul>
+            <li>Your profile info (name, location, skills, needs)</li>
+            <li>Your network connections (who you've invited, who invited you)</li>
+            <li>Exchange logs (what help was given/received, time credits)</li>
+            <li>Messages between members</li>
+            <li>Payment info (if you use paid services)</li>
+          </ul>
+          <p><strong>We don't collect:</strong> Browsing history, location tracking outside the app, third-party ad data, anything we don't need.</p>
+          <p><a href="privacy.html">Read our full privacy policy →</a></p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Do you sell my data?</summary>
+        <div class="faq-answer">
+          <p><strong>Never.</strong> We make money from optional paid services, not surveillance capitalism.</p>
+          <p>Your network, your exchanges, your messages—none of it is for sale. Not to advertisers, not to data brokers, not to anyone. <a href="revenue.html">See how we make money →</a></p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Can I export my data?</summary>
+        <div class="faq-answer">
+          <p><strong>Yes. At any time.</strong></p>
+          <p>Export your full exchange history, time credits, messages, network connections, and profile data in standard formats (CSV, JSON). It's your data—you can take it with you if you leave Kith.</p>
+          <p>We also provide monthly reports formatted like a power bill: who you helped, who helped you, total hours, your balance. Makes it easy to see your activity at a glance.</p>
+        </div>
+      </details>
+    </div>
+
+    <h2>Still have questions?</h2>
+    <p style="font-size:1.2rem;margin:2rem 0">Can't find what you're looking for? <a href="contact.html" style="color:var(--clay);font-weight:700;text-decoration:underline">Contact us</a> and we'll help you out.</p>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Ready to join?</h2>
+  <p>Join the waitlist for early access when we launch in your area</p>
+  <a href="index.html#download" class="cta-button">Join Waitlist →</a>
+</section>
+
+</body>
+</html>

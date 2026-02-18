@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kith | Coordinate help with your trusted circle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#7A9B76;--deep-green:#5A7A56;--clay:#C95D3D;--terracotta:#E87A5D;--warm-white:#FFFEF9;--cream:#FFF8F0;--charcoal:#2B2B2B}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--charcoal);line-height:1.6}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
+
+.site-header{background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);padding:1.5rem 2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.header-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.logo-link{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--warm-white)}
+.logo-svg{width:40px;height:40px}
+.brand-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;letter-spacing:1px}
+.nav-links{display:flex;gap:1rem;flex-wrap:wrap}
+.nav-link{color:var(--warm-white);text-decoration:none;font-weight:500;padding:0.5rem 1.5rem;border-radius:25px;transition:all 0.3s ease;background:rgba(255,255,255,0.1)}
+.nav-link:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
+.nav-link.active{background:var(--warm-white);color:var(--sage)}
+
+.hero{padding:6rem 2rem 4rem;background:linear-gradient(135deg,var(--cream),#FFE8D6);text-align:center}
+.hero h1{font-size:clamp(2.5rem,6vw,4rem);color:var(--clay);margin-bottom:1.5rem;font-style:italic;line-height:1.1}
+.hero-tagline{font-size:1.3rem;line-height:1.7;max-width:900px;margin:0 auto 2.5rem;opacity:0.9}
+.help-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1.5rem;max-width:900px;margin:2.5rem auto;padding:0 1rem}
+.help-item{background:rgba(255,255,255,0.7);padding:1.5rem 1rem;border-radius:15px;text-align:center;transition:all 0.3s ease;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.help-item:hover{transform:translateY(-5px);background:rgba(255,255,255,0.95);box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+.help-icon{font-size:2.5rem;margin-bottom:0.5rem;display:block}
+.help-label{font-size:1rem;font-weight:600;color:var(--charcoal);display:block;text-align:center}
+.hero-note{font-size:1.1rem;margin-top:2rem;color:var(--charcoal);opacity:0.85}
+.cta-button{display:inline-block;margin-top:2rem;padding:1.2rem 3rem;background:var(--clay);color:var(--warm-white);text-decoration:none;border-radius:50px;font-weight:700;font-size:1.2rem;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(201,93,61,0.3)}
+.cta-button:hover{background:var(--terracotta);transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,93,61,0.4)}
+
+.problem-section{padding:6rem 2rem;background:var(--charcoal);color:var(--warm-white);text-align:center}
+.problem-section h2{font-size:clamp(2rem,5vw,3.5rem);color:var(--warm-white);margin-bottom:1.5rem;font-style:italic;line-height:1.2}
+.problem-section p{font-size:1.3rem;line-height:1.8;max-width:900px;margin:0 auto 1.5rem;opacity:0.95}
+
+.two-paths{padding:6rem 2rem;background:var(--warm-white)}
+.two-paths h2{font-size:2.5rem;color:var(--clay);text-align:center;margin-bottom:3rem;font-style:italic}
+.paths-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:3rem}
+.path-card{background:var(--cream);padding:3rem;border-radius:25px;border-top:8px solid var(--sage);transition:all 0.3s ease}
+.path-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+.path-card.paid{border-top-color:var(--clay)}
+.path-number{display:inline-block;padding:0.5rem 1.5rem;background:var(--sage);color:var(--warm-white);border-radius:20px;font-size:1rem;font-weight:700;margin-bottom:1.5rem}
+.path-card.paid .path-number{background:var(--clay)}
+.path-card h3{font-size:2rem;color:var(--clay);margin-bottom:1rem}
+.path-card p{font-size:1.05rem;line-height:1.7;margin-bottom:1rem}
+.path-card ul{margin:1.5rem 0;padding-left:0;list-style:none}
+.path-card li{padding:0.7rem 0;padding-left:1.5rem;position:relative;font-size:1.05rem}
+.path-card li:before{content:"→";position:absolute;left:0;color:var(--clay);font-weight:700}
+.path-note{font-style:italic;opacity:0.8;margin-top:1.5rem;padding-top:1.5rem;border-top:2px solid rgba(0,0,0,0.1)}
+.coverage-note{text-align:center;margin-top:3rem;font-size:1.3rem;font-weight:600;color:var(--clay)}
+
+.how-section{padding:6rem 2rem;background:linear-gradient(135deg,var(--sage),var(--deep-green));color:var(--warm-white)}
+.how-section h2{font-size:2.5rem;text-align:center;margin-bottom:1rem;font-style:italic;color:var(--warm-white)}
+.how-intro{text-align:center;font-size:1.2rem;max-width:800px;margin:0 auto 4rem;opacity:0.95}
+.flow-steps{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem}
+.flow-step{background:rgba(255,255,255,0.15);padding:2rem;border-radius:20px;backdrop-filter:blur(10px);text-align:center}
+.step-num{width:50px;height:50px;background:var(--clay);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;margin:0 auto 1rem}
+.flow-step h3{font-size:1.4rem;margin-bottom:0.8rem;color:var(--warm-white)}
+.flow-step p{font-size:0.95rem;line-height:1.6;opacity:0.95}
+
+.examples-section{padding:6rem 2rem;background:var(--cream)}
+.examples-section h2{font-size:2.5rem;color:var(--clay);text-align:center;margin-bottom:1.5rem;font-style:italic}
+.examples-intro{text-align:center;font-size:1.2rem;max-width:850px;margin:0 auto 3rem;line-height:1.7;opacity:0.9}
+.examples-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.example-card{background:#fff;padding:2rem;border-radius:15px;border-left:5px solid var(--sage);transition:all 0.3s ease}
+.example-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.12)}
+.example-card .icon{font-size:2.5rem;margin-bottom:1rem}
+.example-card h4{font-size:1.3rem;color:var(--clay);margin-bottom:0.8rem;font-weight:700}
+.example-card p{font-size:1rem;line-height:1.6;color:var(--charcoal)}
+
+.compare-section{padding:6rem 2rem;background:var(--warm-white)}
+.compare-section h2{font-size:2.5rem;color:var(--clay);text-align:center;margin-bottom:3rem;font-style:italic}
+.compare-grid{max-width:1000px;margin:0 auto;display:grid;gap:2rem}
+.compare-row{background:var(--cream);padding:2.5rem;border-radius:15px;border-left:5px solid var(--sage);transition:all 0.3s ease}
+.compare-row:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+.compare-row h4{font-size:1.5rem;color:var(--clay);margin-bottom:1.5rem;font-weight:700}
+.compare-cols{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.compare-col h5{font-size:1.1rem;color:var(--charcoal);margin-bottom:0.5rem;font-weight:700;text-transform:uppercase;font-size:0.9rem;letter-spacing:1px}
+.compare-col p{font-size:1rem;line-height:1.6;margin:0}
+
+.download-section{padding:6rem 2rem;background:linear-gradient(135deg,var(--clay),var(--terracotta));color:var(--warm-white);text-align:center}
+.download-section h2{font-size:3rem;margin-bottom:1.5rem;color:var(--warm-white);font-style:italic}
+.download-section p{font-size:1.3rem;margin-bottom:3rem;opacity:0.95;max-width:700px;margin-left:auto;margin-right:auto}
+.download-section .cta-button{background:var(--warm-white);color:var(--clay)}
+.download-section .cta-button:hover{background:var(--cream)}
+
+@media (max-width:768px){
+.header-content{flex-direction:column}
+.help-grid{grid-template-columns:repeat(2,1fr)}
+.paths-grid,.flow-steps,.examples-grid{grid-template-columns:1fr}
+.compare-cols{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-content">
+    <a href="index.html" class="logo-link">
+      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="50" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="80" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="35" cy="55" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="65" cy="55" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="50" cy="45" r="5" fill="#FFFEF9"/>
+      </svg>
+      <span class="brand-name">KITH</span>
+      <span style="font-size:0.7rem;opacity:0.7;margin-left:0.3rem;font-weight:400">by The Village</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="why.html" class="nav-link">Why</a>
+      <a href="how.html" class="nav-link">How It Works</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Coordinate help with people you trust.<br>Automatically fair.</h1>
+  <p class="hero-tagline">Your circle of 8-15 people handles childcare, rides, skills, errands, projects—whatever you need. The app tracks exchanges so everyone stays balanced without awkward tallies.</p>
+  
+  <div class="help-grid">
+    <div class="help-item">
+      <div class="help-icon">👶</div>
+      <div class="help-label">Childcare</div>
+    </div>
+    <div class="help-item">
+      <div class="help-icon">🚗</div>
+      <div class="help-label">Rides</div>
+    </div>
+    <div class="help-item">
+      <div class="help-icon">📚</div>
+      <div class="help-label">Skills</div>
+    </div>
+    <div class="help-item">
+      <div class="help-icon">🏠</div>
+      <div class="help-label">Projects</div>
+    </div>
+    <div class="help-item">
+      <div class="help-icon">🍲</div>
+      <div class="help-label">Meals</div>
+    </div>
+    <div class="help-item">
+      <div class="help-icon">➕</div>
+      <div class="help-label">More</div>
+    </div>
+  </div>
+  
+  <p class="hero-note">When your circle can't help? Access vetted providers.</p>
+  <a href="#download" class="cta-button">Join Waitlist →</a>
+</section>
+
+<section class="problem-section">
+  <h2>Humans evolved to raise kids in groups of 8-14 adults</h2>
+  <p>Most of us are doing it with 1-2 people. No wonder you're exhausted.</p>
+  <p style="margin-top:2rem">For 200,000 years, communities shared childcare, eldercare, food prep, and daily tasks. Then we isolated into separate houses and expected nuclear families to handle everything alone.</p>
+  <p style="margin-top:1.5rem;font-weight:600;font-size:1.15rem">The burnout you feel isn't personal failure. It's a rational response to an impossible setup.</p>
+</section>
+
+<section class="two-paths">
+  <h2>Two Ways to Get Help</h2>
+  <div class="paths-grid">
+    
+    <div class="path-card">
+      <span class="path-number">Option 1</span>
+      <h3>Your Circle</h3>
+      <p><strong>Coordinate with your 8-15 trusted people.</strong> Time credits keep it fair automatically. Covers 80% of your needs.</p>
+      <ul>
+        <li>Fair exchanges (you help, they help)</li>
+        <li>Auto-tracked balance (no mental tallies)</li>
+        <li>Direct coordination (no strangers)</li>
+        <li>Works for any kind of help</li>
+        <li>Free forever</li>
+      </ul>
+      <p class="path-note">Starting with childcare (the most urgent need). Growing based on what YOUR circle coordinates.</p>
+    </div>
+    
+    <div class="path-card paid">
+      <span class="path-number">Option 2</span>
+      <h3>Provider Network</h3>
+      <p><strong>When your circle is tapped out.</strong> Background-checked professionals at fair rates. Covers the 20% your circle can't.</p>
+      <ul>
+        <li>Background-checked caregivers</li>
+        <li>Verified tutors & teachers</li>
+        <li>Licensed transportation help</li>
+        <li>Household service professionals</li>
+        <li>5-15% platform fee (not 35% like UrbanSitter)</li>
+      </ul>
+      <p class="path-note">Sometimes you need help NOW and everyone's busy. That's when you hire from our vetted network.</p>
+    </div>
+    
+  </div>
+  <p class="coverage-note">You're always covered. Circle first, providers when needed.</p>
+</section>
+
+<section class="how-section">
+  <h2>How It Works</h2>
+  <p class="how-intro">Same system for any kind of help. Childcare, rides, skills, errands—whatever your circle agrees to coordinate.</p>
+  
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="step-num">1</div>
+      <h3>Build Circle</h3>
+      <p>Invite your 8-15 trusted people. Friends, neighbors, family—anyone you'd already ask for help.</p>
+    </div>
+    
+    <div class="flow-step">
+      <div class="step-num">2</div>
+      <h3>Post Needs</h3>
+      <p>Need a sitter? A ride? Help moving? Post it. App notifies people with relevant skills.</p>
+    </div>
+    
+    <div class="flow-step">
+      <div class="step-num">3</div>
+      <h3>Coordinate</h3>
+      <p>Message directly to work out details. No group chat chaos. Just 1:1 coordination.</p>
+    </div>
+    
+    <div class="flow-step">
+      <div class="step-num">4</div>
+      <h3>Complete</h3>
+      <p>Exchange happens. Both people confirm when done. Time gets tracked automatically.</p>
+    </div>
+    
+    <div class="flow-step">
+      <div class="step-num">5</div>
+      <h3>Stay Balanced</h3>
+      <p>App shows who's helped who. Everyone sees the balance. No guilt. No awkwardness.</p>
+    </div>
+    
+    <div class="flow-step">
+      <div class="step-num">6</div>
+      <h3>Keep Going</h3>
+      <p>As long as you're helping others, you can ask for help. Circle stays active and fair.</p>
+    </div>
+  </div>
+</section>
+
+<section class="examples-section">
+  <h2>What Your Circle Can Coordinate</h2>
+  <p class="examples-intro">We're starting with childcare (most urgent). But circles coordinate whatever they need. Here's what's already happening:</p>
+  
+  <div class="examples-grid">
+    <div class="example-card">
+      <div class="icon">👶</div>
+      <h4>Saturday Babysitting</h4>
+      <p>Sarah watches your kids 2-6pm. You cover her Tuesday morning. Circle tracks it. Nobody owes anyone.</p>
+    </div>
+    
+    <div class="example-card">
+      <div class="icon">🚸</div>
+      <h4>School Pickup Rotation</h4>
+      <p>Three families split the week. Monday you. Tuesday Sarah. Wednesday Marcus. Cuts your drive time by 60%.</p>
+    </div>
+    
+    <div class="example-card">
+      <div class="icon">🎸</div>
+      <h4>Guitar Lessons</h4>
+      <p>Sarah teaches your daughter guitar. You teach her son Spanish. Everyone learns. Nobody pays $30/hour.</p>
+    </div>
+    
+    <div class="example-card">
+      <div class="icon">✈️</div>
+      <h4>Airport Rides</h4>
+      <p>You need a 6am ride Tuesday. Marcus drops you off. You help him move furniture Saturday. Fair trade.</p>
+    </div>
+    
+    <div class="example-card">
+      <div class="icon">🍝</div>
+      <h4>Meal Prep Circle</h4>
+      <p>Five people cook Tuesday. Each makes one dish. Everyone goes home with five meals. One night cooking = week of dinners.</p>
+    </div>
+    
+    <div class="example-card">
+      <div class="icon">🏥</div>
+      <h4>Parent Appointments</h4>
+      <p>You drive Sarah's parent to doctor Tuesday. She covers your parent's grocery run Thursday. Eldercare gets easier.</p>
+    </div>
+    
+    <div class="example-card">
+      <div class="icon">📦</div>
+      <h4>Moving Help</h4>
+      <p>Marcus needs furniture moved Saturday. You + two others help for 3 hours. When you need help, they show up.</p>
+    </div>
+    
+    <div class="example-card">
+      <div class="icon">🔧</div>
+      <h4>Home Repairs</h4>
+      <p>Your sink's broken. Marcus knows plumbing. He fixes it in an hour. You help him with tech setup later.</p>
+    </div>
+    
+    <div class="example-card">
+      <div class="icon">➕</div>
+      <h4>Whatever Else</h4>
+      <p>Dog sitting, yard work, tutoring, errands—if your circle agrees, you can coordinate it. App tracks any exchange.</p>
+    </div>
+  </div>
+</section>
+
+<section class="compare-section">
+  <h2>Why Not Just Use...</h2>
+  <div class="compare-grid">
+    
+    <div class="compare-row">
+      <h4>Facebook Groups?</h4>
+      <div class="compare-cols">
+        <div class="compare-col">
+          <h5>Problem:</h5>
+          <p>No tracking. Who owes who? Guilt piles up. Requests get buried in group chat chaos.</p>
+        </div>
+        <div class="compare-col">
+          <h5>Kith:</h5>
+          <p>Auto-tracked balance. Direct 1:1 coordination. Everyone sees who's helped who. No guilt.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="compare-row">
+      <h4>UrbanSitter?</h4>
+      <div class="compare-cols">
+        <div class="compare-col">
+          <h5>Problem:</h5>
+          <p>$25-35/hour adds up fast. Hiring strangers every time. 35% platform fee. No community building.</p>
+        </div>
+        <div class="compare-col">
+          <h5>Kith:</h5>
+          <p>Your people (free). Paid backup only when needed (5-15% fee vs 35%). Community builds over time.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="compare-row">
+      <h4>Carefully?</h4>
+      <div class="compare-cols">
+        <div class="compare-col">
+          <h5>Problem:</h5>
+          <p>Fixed pods. Only childcare. What if your pod can't help? No paid backup option.</p>
+        </div>
+        <div class="compare-col">
+          <h5>Kith:</h5>
+          <p>Flexible circles. Any kind of help, not just childcare. Provider network backup. Grows with you.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="compare-row">
+      <h4>Nextdoor?</h4>
+      <div class="compare-cols">
+        <div class="compare-col">
+          <h5>Problem:</h5>
+          <p>Public posts to strangers. No reciprocity tracking. Privacy concerns.</p>
+        </div>
+        <div class="compare-col">
+          <h5>Kith:</h5>
+          <p>Private circles. Fair tracking built-in. Trusted people only. You control who sees what.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="download-section" id="download">
+  <h2>Join the Waitlist</h2>
+  <p>Get early access when we launch in your area. Private beta coming soon.</p>
+  <a href="#download" class="cta-button">Join Waitlist →</a>
+  <p style="margin-top:2rem;font-size:1rem;opacity:0.85">Starting with childcare coordination. Growing with whatever your circle needs.</p>
+</section>
+
+</body>
+</html>

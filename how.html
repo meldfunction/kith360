@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Works | Kith</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#7A9B76;--deep-green:#5A7A56;--clay:#C95D3D;--terracotta:#E87A5D;--warm-white:#FFFEF9;--cream:#FFF8F0;--charcoal:#2B2B2B}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--charcoal);line-height:1.6}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
+
+.site-header{background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);padding:1.5rem 2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.header-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.logo-link{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--warm-white)}
+.logo-svg{width:40px;height:40px}
+.brand-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;letter-spacing:1px}
+.nav-links{display:flex;gap:1rem;flex-wrap:wrap}
+.nav-link{color:var(--warm-white);text-decoration:none;font-weight:500;padding:0.5rem 1.5rem;border-radius:25px;transition:all 0.3s ease;background:rgba(255,255,255,0.1)}
+.nav-link:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
+.nav-link.active{background:var(--warm-white);color:var(--sage)}
+
+.hero{padding:8rem 2rem 6rem;background:linear-gradient(135deg,var(--cream),#FFE8D6);text-align:center}
+.hero h1{font-size:clamp(3rem,7vw,5rem);color:var(--clay);margin-bottom:2rem;font-style:italic}
+.hero p{font-size:1.4rem;max-width:800px;margin:0 auto;opacity:0.9;line-height:1.7}
+
+.basics{padding:6rem 2rem;background:var(--warm-white)}
+.basics .container{max-width:900px;margin:0 auto}
+.basics h2{font-size:2.5rem;color:var(--clay);margin-bottom:2rem;font-style:italic}
+.basics p{font-size:1.15rem;line-height:1.8;margin-bottom:1.5rem}
+.basics strong{color:var(--clay)}
+
+.flow-examples{padding:6rem 2rem;background:var(--cream)}
+.flow-examples h2{font-size:2.5rem;color:var(--clay);text-align:center;margin-bottom:1rem;font-style:italic}
+.flow-intro{text-align:center;font-size:1.2rem;max-width:800px;margin:0 auto 4rem;opacity:0.9}
+.flow-card{max-width:1000px;margin:0 auto 4rem;background:#fff;padding:3rem;border-radius:25px;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+.flow-tag{display:inline-block;padding:0.5rem 1.5rem;background:var(--sage);color:var(--warm-white);border-radius:20px;font-weight:700;margin-bottom:2rem}
+.flow-tag.transport{background:#FFB74D}
+.flow-tag.learn{background:#BA68C8}
+.flow-steps-detailed{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin:2rem 0}
+.flow-step-detail{background:var(--cream);padding:1.5rem;border-radius:15px;text-align:center}
+.step-icon{font-size:2rem;margin-bottom:0.8rem}
+.flow-step-detail h4{font-size:1.1rem;color:var(--clay);margin-bottom:0.5rem}
+.flow-step-detail p{font-size:0.95rem;margin:0;opacity:0.9}
+.flow-note{background:var(--cream);padding:1.5rem;border-radius:15px;margin-top:2rem;border-left:4px solid var(--clay);font-style:italic}
+
+.categories{padding:6rem 2rem;background:var(--warm-white)}
+.categories h2{font-size:2.5rem;color:var(--clay);text-align:center;margin-bottom:1rem;font-style:italic}
+.categories-intro{text-align:center;font-size:1.2rem;max-width:800px;margin:0 auto 4rem;opacity:0.9}
+.category-section{max-width:1100px;margin:0 auto 4rem}
+.category-section h3{font-size:2rem;color:var(--clay);margin-bottom:1.5rem}
+.examples-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.example-item{background:var(--cream);padding:1.5rem;border-radius:15px;border-left:4px solid var(--sage)}
+.example-item h4{font-size:1.1rem;color:var(--charcoal);margin-bottom:0.5rem}
+.example-item p{font-size:0.95rem;margin:0;opacity:0.9}
+
+.provider-section{padding:6rem 2rem;background:linear-gradient(135deg,var(--clay),var(--terracotta));color:var(--warm-white);text-align:center}
+.provider-section h2{font-size:2.5rem;margin-bottom:1.5rem;color:var(--warm-white);font-style:italic}
+.provider-section p{font-size:1.2rem;max-width:800px;margin:0 auto 2rem;opacity:0.95;line-height:1.7}
+.provider-link{display:inline-block;padding:1.2rem 3rem;background:var(--warm-white);color:var(--clay);text-decoration:none;border-radius:50px;font-weight:700;font-size:1.2rem;transition:all 0.3s ease;margin-top:1rem}
+.provider-link:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
+
+.form-section{padding:6rem 2rem;background:var(--cream)}
+.form-section h2{font-size:2.5rem;color:var(--clay);text-align:center;margin-bottom:2rem;font-style:italic}
+.form-section p{font-size:1.2rem;text-align:center;max-width:700px;margin:0 auto 3rem;line-height:1.7}
+.feedback-form{max-width:600px;margin:0 auto;background:#fff;padding:3rem;border-radius:25px;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+.feedback-form textarea{width:100%;padding:1.5rem;border:2px solid var(--sage);border-radius:15px;font-family:'DM Sans',sans-serif;font-size:1rem;margin-bottom:1.5rem;resize:vertical;min-height:150px}
+.feedback-form button{width:100%;padding:1.2rem;background:var(--clay);color:var(--warm-white);border:none;border-radius:50px;font-weight:700;font-size:1.1rem;cursor:pointer;transition:all 0.3s ease}
+.feedback-form button:hover{background:var(--terracotta);transform:translateY(-2px)}
+
+@media (max-width:768px){
+.header-content{flex-direction:column}
+.flow-steps-detailed,.examples-list{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-content">
+    <a href="index.html" class="logo-link">
+      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="50" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="80" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="35" cy="55" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="65" cy="55" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="50" cy="45" r="5" fill="#FFFEF9"/>
+      </svg>
+      <span class="brand-name">KITH</span>
+      <span style="font-size:0.7rem;opacity:0.7;margin-left:0.3rem;font-weight:400">by The Village</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="why.html" class="nav-link">Why</a>
+      <a href="how.html" class="nav-link active">How It Works</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>How Your Circle Works</h1>
+  <p>Same people. Many kinds of help. One simple system.</p>
+</section>
+
+<section class="basics">
+  <div class="container">
+    <h2>The Basics</h2>
+    <p><strong>Your circle = your 8-15 trusted people.</strong> Friends, neighbors, family, coworkers. Anyone you'd already ask for help.</p>
+    <p><strong>Same people for everything.</strong> You don't build separate circles for childcare, rides, skills. It's the same 8-15 handling whatever comes up.</p>
+    <p><strong>Fair tracking built-in.</strong> The app tracks who helps who. 1 hour = 1 credit, regardless of what kind of help. No mental tallies. No guilt.</p>
+    <p><strong>You coordinate directly.</strong> No group chat chaos. When you need help, app notifies people who can help. You message 1:1 to work out details.</p>
+  </div>
+</section>
+
+<section class="flow-examples">
+  <h2>Example Flows</h2>
+  <p class="flow-intro">Same 6 steps. Different needs. Watch how the system works for three different exchanges:</p>
+  
+  <div class="flow-card">
+    <span class="flow-tag">Example A: Childcare</span>
+    <h3 style="font-size:1.8rem;color:var(--clay);margin-bottom:2rem">Sarah needs a Saturday sitter</h3>
+    
+    <div class="flow-steps-detailed">
+      <div class="flow-step-detail">
+        <div class="step-icon">📱</div>
+        <h4>1. Sarah Posts</h4>
+        <p>"Need sitter Saturday 2-6pm for Emma (age 4)"</p>
+      </div>
+      
+      <div class="flow-step-detail">
+        <div class="step-icon">🔔</div>
+        <h4>2. You Get Notified</h4>
+        <p>App knows you're available Saturdays and have childcare experience</p>
+      </div>
+      
+      <div class="flow-step-detail">
+        <div class="step-icon">💬</div>
+        <h4>3. You Respond</h4>
+        <p>Message Sarah: "I can help! We'll do arts & crafts"</p>
+      </div>
+      
+      <div class="flow-step-detail">
+        <div class="step-icon">✅</div>
+        <h4>4. Saturday Happens</h4>
+        <p>You watch Emma 2-6pm. She paints, you both have fun</p>
+      </div>
+      
+      <div class="flow-step-detail">
+        <div class="step-icon">✔️</div>
+        <h4>5. Both Confirm</h4>
+        <p>You mark complete. Sarah confirms. 4 hours tracked</p>
+      </div>
+      
+      <div class="flow-step-detail">
+        <div class="step-icon">⚖️</div>
+        <h4>6. Balance Updates</h4>
+        <p>You earned 4 credits. Sarah owes circle 4 hours</p>
+      </div>
+    </div>
+    
+    <div class="flow-note">
+      <strong>What happens next:</strong> Sarah can help you directly, or help someone else who helps you. Maybe she drives Marcus to airport (uses 2 credits), then teaches your kid guitar (uses 2 more credits). Circle stays balanced.
+    </div>
+  </div>
+  
+  <div class="flow-card">
+    <span class="flow-tag transport">Example B: Transportation</span>
+    <h3 style="font-size:1.8rem;color:var(--clay);margin-bottom:2rem">Marcus needs an airport ride at 6am</h3>
+    
+    <div class="flow-steps-detailed">
+      <div class="flow-step-detail">
+        <div class="step-icon">📱</div>
+        <h4>1. Marcus Posts</h4>
+        <p>"Need airport ride Tuesday 6am (IAD)"</p>
+      </div>
+      
+      <div class="flow-step-detail">
+        <div class="step-icon">🔔</div>
+        <h4>2. Sarah Gets Notified</h4>
+        <p>She's marked "early bird" in her profile</p>
+      </div>
+      
+      <div class="flow-step-detail">
+        <div class="step-icon">💬</div>
+        <h4>3. Sarah Responds</h4>
+        <p>"I got you! I'm up early anyway"</p>
+      </div>
+      
+      <div class="flow-step-detail">
+        <div class="step-icon">✅</div>
+        <h4>4. Tuesday Happens</h4>
+        <p>Sarah picks up Marcus at 5:45am, drops at airport by 6:15am</p>
+      </div>
+      
+      <div class="flow-step-detail">
+        <div class="step-icon">✔️</div>
+        <h4>5. Both Confirm</h4>
+        <p>Marcus marks complete. Sarah confirms. 1.5 hours tracked</p>
+      </div>
+      
+      <div class="flow-step-detail">
+        <div class="step-icon">⚖️</div>
+        <h4>6. Balance Updates</h4>
+        <p>Sarah earned 1.5 credits. Marcus owes circle 1.5 hours</p>
+      </div>
+    </div>
+    
+    <div class="flow-note">
+      <strong>Different help, same system.</strong> Sarah now has 1.5 credits she can use for anything—childcare, moving help, meal prep, whatever. Marcus will help someone in the circle later to balance out.
+    </div>
+  </div>
+  
+  <div class="flow-card">
+    <span class="flow-tag learn">Example C: Learning</span>
+    <h3 style="font-size:1.8rem;color:var(--clay);margin-bottom:2rem">You want to learn guitar basics</h3>
+    
+    <div class="flow-steps-detailed">
+      <div class="flow-step-detail">
+        <div class="step-icon">📱</div>
+        <h4>1. You Post</h4>
+        <p>"Want to learn guitar basics—anyone teach?"</p>
+      </div>
+      
+      <div class="flow-step-detail">
+        <div class="step-icon">🔔</div>
+        <h4>2. Sarah Gets Notified</h4>
+        <p>She listed "guitar" as a skill she can teach</p>
+      </div>
+      
+      <div class="flow-step-detail">
+        <div class="step-icon">💬</div>
+        <h4>3. Sarah Responds</h4>
+        <p>"I teach! How about Thursday evenings?"</p>
+      </div>
+      
+      <div class="flow-step-detail">
+        <div class="step-icon">✅</div>
+        <h4>4. Lessons Happen</h4>
+        <p>Sarah teaches you 1 hour/week for 4 weeks</p>
+      </div>
+      
+      <div class="flow-step-detail">
+        <div class="step-icon">✔️</div>
+        <h4>5. Both Confirm</h4>
+        <p>After each lesson, you both mark complete</p>
+      </div>
+      
+      <div class="flow-step-detail">
+        <div class="step-icon">⚖️</div>
+        <h4>6. Balance Updates</h4>
+        <p>Sarah earns 1 credit per lesson. You owe circle 4 hours total</p>
+      </div>
+    </div>
+    
+    <div class="flow-note">
+      <strong>Skills have value.</strong> Sarah earned 4 credits teaching guitar. She can use them when she needs childcare. You owe 4 hours—maybe you help Marcus move furniture, or watch someone's kids. Circle flows naturally.
+    </div>
+  </div>
+</section>
+
+<section class="categories">
+  <h2>What Circles Coordinate</h2>
+  <p class="categories-intro">We're starting with childcare (most urgent). But if your circle agrees, you can coordinate anything. Here's what's already happening:</p>
+  
+  <div class="category-section">
+    <h3>Childcare & Kids</h3>
+    <div class="examples-list">
+      <div class="example-item">
+        <h4>Babysitting Swaps</h4>
+        <p>Saturday nights, date nights, emergency coverage</p>
+      </div>
+      <div class="example-item">
+        <h4>School Pickups</h4>
+        <p>Split the route, alternate days, reduce drive time</p>
+      </div>
+      <div class="example-item">
+        <h4>Playdates</h4>
+        <p>Coordinate multi-kid hangouts, share supervision</p>
+      </div>
+      <div class="example-item">
+        <h4>Emergency Backup</h4>
+        <p>Kid sick? Work emergency? Circle has your back</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="category-section">
+    <h3>Getting Around</h3>
+    <div class="examples-list">
+      <div class="example-item">
+        <h4>Activity Carpools</h4>
+        <p>Soccer practice, dance class, music lessons—split drives</p>
+      </div>
+      <div class="example-item">
+        <h4>Airport Rides</h4>
+        <p>Early morning, late night—someone in circle can help</p>
+      </div>
+      <div class="example-item">
+        <h4>Appointment Transportation</h4>
+        <p>Doctor, dentist, errands—especially for aging parents</p>
+      </div>
+      <div class="example-item">
+        <h4>Commute Sharing</h4>
+        <p>Regular trips to same area—coordinate timing</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="category-section">
+    <h3>Learning & Skills</h3>
+    <div class="examples-list">
+      <div class="example-item">
+        <h4>Teaching Kids</h4>
+        <p>Music, sports, languages, art—share expertise</p>
+      </div>
+      <div class="example-item">
+        <h4>Tutoring</h4>
+        <p>Homework help, test prep, subject mastery</p>
+      </div>
+      <div class="example-item">
+        <h4>Adult Learning</h4>
+        <p>Spanish practice, coding basics, professional skills</p>
+      </div>
+      <div class="example-item">
+        <h4>Skill Swaps</h4>
+        <p>You teach design, they teach you cooking</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="category-section">
+    <h3>Projects & Tasks</h3>
+    <div class="examples-list">
+      <div class="example-item">
+        <h4>Moving Help</h4>
+        <p>Furniture, boxes, heavy lifting—gather the crew</p>
+      </div>
+      <div class="example-item">
+        <h4>Home Repairs</h4>
+        <p>Plumbing, painting, yard work—share skills & effort</p>
+      </div>
+      <div class="example-item">
+        <h4>Meal Prep</h4>
+        <p>Cook together, everyone goes home with dinners</p>
+      </div>
+      <div class="example-item">
+        <h4>Bulk Shopping</h4>
+        <p>Costco runs, split quantities, save money</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="category-section">
+    <h3>Family Support</h3>
+    <div class="examples-list">
+      <div class="example-item">
+        <h4>Elderly Parent Appointments</h4>
+        <p>Doctor visits, errands, companionship</p>
+      </div>
+      <div class="example-item">
+        <h4>Hospital Support</h4>
+        <p>Sit with someone during surgery, bring meals</p>
+      </div>
+      <div class="example-item">
+        <h4>Post-Surgery Help</h4>
+        <p>Meal trains, errand runs, check-ins</p>
+      </div>
+      <div class="example-item">
+        <h4>Respite Care</h4>
+        <p>Give caregivers a break—take over for a few hours</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="provider-section">
+  <h2>When Your Circle Can't Help</h2>
+  <p>Sometimes everyone's busy. Sometimes you need specialized skills. Sometimes you need help RIGHT NOW.</p>
+  <p>That's when you hire from our vetted provider network. Background-checked professionals. Fair rates. 5-15% platform fee (not 35% like UrbanSitter).</p>
+  <a href="paid-services.html" class="provider-link">Learn About Providers →</a>
+</section>
+
+<section class="form-section">
+  <h2>What Could Your Circle Coordinate?</h2>
+  <p>We build what you actually need. Tell us what kind of help would make your life easier:</p>
+  <div class="feedback-form">
+    <textarea placeholder="Example: I wish my circle could help with..."></textarea>
+    <button type="button">Submit Feedback</button>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Kith Exists | Our Philosophy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#7A9B76;--deep-green:#5A7A56;--clay:#C95D3D;--terracotta:#E87A5D;--warm-white:#FFFEF9;--cream:#FFF8F0;--charcoal:#2B2B2B}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--charcoal);line-height:1.6}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
+
+.site-header{background:linear-gradient(135deg,var(--sage) 0%,var(--deep-green) 100%);padding:1.5rem 2rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.header-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.logo-link{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--warm-white)}
+.logo-svg{width:40px;height:40px}
+.brand-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;letter-spacing:1px}
+.nav-links{display:flex;gap:1rem;flex-wrap:wrap}
+.nav-link{color:var(--warm-white);text-decoration:none;font-weight:500;padding:0.5rem 1.5rem;border-radius:25px;transition:all 0.3s ease;background:rgba(255,255,255,0.1)}
+.nav-link:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px)}
+.nav-link.active{background:var(--warm-white);color:var(--sage)}
+
+.hero{padding:8rem 2rem 6rem;background:linear-gradient(135deg,var(--cream),#FFE8D6);text-align:center}
+.hero h1{font-size:clamp(3rem,7vw,5rem);color:var(--clay);margin-bottom:2rem;font-style:italic}
+.hero p{font-size:1.4rem;max-width:800px;margin:0 auto;opacity:0.9;line-height:1.7}
+
+.content{padding:6rem 2rem}
+.container{max-width:900px;margin:0 auto}
+.content h2{font-size:2.5rem;color:var(--clay);margin:4rem 0 1.5rem;font-style:italic}
+.content h3{font-size:1.8rem;color:var(--clay);margin:2rem 0 1rem}
+.content p{font-size:1.1rem;line-height:1.8;margin-bottom:1.5rem}
+.content strong{color:var(--clay);font-weight:700}
+.content a{color:var(--clay);font-weight:700;text-decoration:underline}
+.content a:hover{color:var(--terracotta)}
+
+.highlight-box{background:var(--cream);padding:3rem;border-radius:25px;margin:3rem 0;border-left:8px solid var(--sage)}
+.highlight-box h3{font-size:2rem;color:var(--clay);margin-bottom:1.5rem}
+.highlight-box p{font-size:1.15rem;line-height:1.8;margin-bottom:1rem}
+
+.dark-box{background:linear-gradient(135deg,var(--charcoal),#1a1a1a);color:var(--warm-white);padding:4rem 3rem;border-radius:25px;margin:3rem 0}
+.dark-box h3{font-size:2rem;color:var(--warm-white);margin-bottom:1.5rem}
+.dark-box p{font-size:1.15rem;line-height:1.8;margin-bottom:1rem;opacity:0.95}
+.dark-box strong{color:var(--warm-white);font-weight:700}
+
+.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin:3rem 0}
+.value-card{background:var(--cream);padding:2.5rem;border-radius:20px;border-left:5px solid var(--sage);transition:all 0.3s ease}
+.value-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+.value-card h3{font-size:1.5rem;color:var(--clay);margin-bottom:1rem}
+.value-card p{font-size:1.05rem;line-height:1.7;margin:0}
+
+.lifecycle-section{background:linear-gradient(135deg,var(--sage),var(--deep-green));padding:6rem 2rem;margin:4rem 0;color:var(--warm-white)}
+.lifecycle-section h2{font-size:2.5rem;text-align:center;margin-bottom:3rem;font-style:italic;color:var(--warm-white)}
+.lifecycle-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+.lifecycle-stage{background:rgba(255,255,255,0.15);padding:2.5rem;border-radius:20px;backdrop-filter:blur(10px)}
+.lifecycle-stage h4{font-size:1.5rem;margin-bottom:1.5rem;color:var(--warm-white);font-weight:700}
+.lifecycle-stage p{font-size:1.05rem;line-height:1.7;opacity:0.95;margin:0 0 1rem 0}
+.lifecycle-stage p:last-child{margin-bottom:0}
+.lifecycle-stage strong{color:var(--warm-white);font-weight:700;display:inline}
+
+.team-section{background:var(--cream);padding:6rem 2rem;margin:4rem 0}
+.team-section h2{font-size:2.5rem;color:var(--clay);text-align:center;margin-bottom:3rem;font-style:italic}
+.team-section p{font-size:1.1rem;line-height:1.8;max-width:800px;margin:0 auto 2rem;text-align:center}
+
+.cta-section{padding:6rem 2rem;background:linear-gradient(135deg,var(--clay),var(--terracotta));color:var(--warm-white);text-align:center}
+.cta-section h2{font-size:2.8rem;margin-bottom:1.5rem;color:var(--warm-white);font-style:italic}
+.cta-section p{font-size:1.2rem;opacity:0.95;max-width:700px;margin:0 auto 2rem auto}
+.cta-button{display:inline-block;padding:1.2rem 3rem;background:var(--warm-white);color:var(--clay);text-decoration:none;border-radius:50px;font-weight:700;font-size:1.2rem;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(0,0,0,0.2)}
+.cta-button:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
+
+@media (max-width:768px){
+.header-content{flex-direction:column}
+.values-grid,.lifecycle-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-content">
+    <a href="index.html" class="logo-link">
+      <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="50" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="80" cy="35" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="35" cy="55" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="65" cy="55" r="15" fill="none" stroke="#FFFEF9" stroke-width="3" opacity="0.9"/>
+        <circle cx="50" cy="45" r="5" fill="#FFFEF9"/>
+      </svg>
+      <span class="brand-name">KITH</span>
+      <span style="font-size:0.7rem;opacity:0.7;margin-left:0.3rem;font-weight:400">by The Village</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="why.html" class="nav-link active">Why</a>
+      <a href="how.html" class="nav-link">How It Works</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Why Kith Exists</h1>
+  <p>The nuclear family experiment failed. Let's rebuild what actually works.</p>
+</section>
+
+<section class="content">
+  <div class="container">
+    
+    <h2>The Childcare Crisis</h2>
+    <p>We started building Kith because we were exhausted. Not from our kids—from the constant mental load of coordinating care. The guilt of asking the same neighbor again. The WhatsApp group chaos. The impossible choice between "call in sick to work" or "bring your kid to the presentation."</p>
+    
+    <p><strong>The problem isn't that people don't want to help each other.</strong> It's that we're trying to run a complex logistics operation using tools designed for casual chatting.</p>
+    
+    <div class="highlight-box">
+      <h3>The Math Doesn't Work</h3>
+      <p>A human child requires an estimated <a href="https://worldofpaleoanthropology.org/2025/03/20/at-the-dawn-of-parenting-an-evolutionary-tale-of-love-and-survival/" target="_blank">10-13 million calories to grow to independence</a>. That workload is literally too great for 1-2 people.</p>
+      <p><strong>For 99% of human history, children were raised by 8-14 active caregivers daily.</strong> Multiple adults—grandparents, aunts, uncles, neighbors, older siblings—all pitched in. This wasn't charity. It was survival.</p>
+      <p style="margin-top:1.5rem"><strong>Then came nuclear families.</strong> A historical blip. Just decades old depending on where you live. We scattered the village, moved for jobs, isolated ourselves. And now 1-2 people are expected to do what 8-14 used to share.</p>
+    </div>
+    
+    <p style="font-size:1.2rem;font-weight:600">The exhaustion modern parents feel isn't personal failure. It's a rational response to being asked to do something humans were never designed to do alone.</p>
+    
+    <h2>Why Current Solutions Fail</h2>
+    
+    <h3>UrbanSitter: Expensive Strangers</h3>
+    <p>$25-35/hour adds up fast. $140 for one date night. $2,800/month if you need regular help. And you're hiring strangers every time—no community, no relationships, just transactions. Plus they take a 35% platform fee.</p>
+    
+    <h3>Facebook Groups: No Structure</h3>
+    <p>Requests get buried in chat. Nobody tracks who's helped who. Guilt piles up because you asked Sarah three times but she hasn't asked you back. Is she keeping track? Are you imposing? The mental load is worse than doing it alone.</p>
+    
+    <h3>Carefully: Limited Scope</h3>
+    <p>Fixed childcare pods work great—if you have one. But what if your pod can't help this week? What about rides, tutoring, eldercare? And there's no paid backup option when everyone's tapped out.</p>
+    
+    <div class="dark-box">
+      <h3>What Parents Actually Need</h3>
+      <p><strong>Fair exchange system:</strong> Not favors (guilt). Not money (transactional). Just balanced help over time.</p>
+      <p><strong>Automatic tracking:</strong> Nobody keeps mental tallies. App shows who's helped who. Everyone sees the balance.</p>
+      <p><strong>Your trusted people:</strong> Not strangers from the internet. The 8-15 people you already know and trust.</p>
+      <p><strong>Flexibility:</strong> Works for childcare today. School pickups tomorrow. Help with aging parents next year. Your circle grows with you.</p>
+      <p><strong>Backup when needed:</strong> Sometimes everyone's busy. That's when you hire from a vetted provider network. Circle first, professionals when needed.</p>
+    </div>
+    
+    <h2>How Humans Actually Raised Kids</h2>
+    
+    <p>Humans can maintain about 150 meaningful relationships (<a href="https://en.wikipedia.org/wiki/Dunbar's_number" target="_blank">Dunbar's number</a>). But research on our closest relationships shows we devote two-thirds of our social time to just 15 people: an inner core of about 5, plus 10 more in our close circle.</p>
+    
+    <p><strong>That's your kith.</strong> Not kin (family), but kith—an old English word meaning friends and neighbors. Your people. Your community. The ones who show up.</p>
+    
+    <p><a href="https://www.npr.org/sections/goatsandsoda/2023/12/01/1216043849/bringing-up-a-baby-can-be-a-tough-and-lonely-job-heres-a-solution-alloparents" target="_blank">Hunter-gatherer societies</a> show caregiver-to-child ratios exceeding 5:1. Multiple adults caring for each child. This is called alloparenting—community members who aren't the biological parents helping raise children. It's not an innovation. It's how humans evolved to do this.</p>
+    
+    <div class="highlight-box">
+      <h3>Why 8-15 People?</h3>
+      <p>Research shows this is the sweet spot for cooperation:</p>
+      <p><strong>Too few (1-4 people):</strong> Burnout. No backup. System breaks when one person gets sick.</p>
+      <p><strong>Just right (8-15 people):</strong> Enough hands to share the load. Small enough to build real trust. Large enough for backup when someone can't help.</p>
+      <p><strong>Too many (20+ people):</strong> Coordination overhead explodes. Trust dilutes. Becomes transactional marketplace, not community.</p>
+    </div>
+    
+    <h2>Beyond Childcare</h2>
+    
+    <p>Here's what most parenting apps get wrong: <strong>Your circle doesn't disappear when your kids turn 5.</strong></p>
+    
+    <p>Right now you need Saturday babysitting. In 3 years you need carpool to soccer practice. In 5 years you need homework help and tutoring. In 10 years your kids are teenagers who need rides everywhere but don't want you around.</p>
+    
+    <p>And then your parents start aging. Suddenly you're coordinating doctor appointments, grocery runs, and companionship for aging family members.</p>
+    
+    <p style="font-size:1.2rem;font-weight:600;color:var(--clay)">Your circle doesn't age out. It evolves with your life.</p>
+    
+  </div>
+</section>
+
+<section class="lifecycle-section">
+  <h2>Circles That Grow With You</h2>
+  <div class="lifecycle-grid">
+    
+    <div class="lifecycle-stage">
+      <h4>Babies & Toddlers</h4>
+      <p><strong>Need:</strong> Emergency backup, date nights, someone to hold the baby while you shower.</p>
+      <p><strong>Circle:</strong> Sarah watches your infant Tuesday. You cover her Thursday. Everyone survives.</p>
+    </div>
+    
+    <div class="lifecycle-stage">
+      <h4>Elementary Years</h4>
+      <p><strong>Need:</strong> School pickups, after-school care, playdates, enrichment activities.</p>
+      <p><strong>Circle:</strong> Three families split carpool. Marcus teaches guitar. Everyone saves time and money.</p>
+    </div>
+    
+    <div class="lifecycle-stage">
+      <h4>Middle & High School</h4>
+      <p><strong>Need:</strong> Activity transportation, homework help, less direct care but more logistics.</p>
+      <p><strong>Circle:</strong> Your kid needs rides to practice. Sarah's kid needs math tutoring. You coordinate trades.</p>
+    </div>
+    
+    <div class="lifecycle-stage">
+      <h4>Empty Nest & Beyond</h4>
+      <p><strong>Need:</strong> Help with aging parents, household projects, meal prep, companionship.</p>
+      <p><strong>Circle:</strong> You drive Sarah's parent to appointments. Marcus helps with home repairs. Community persists.</p>
+    </div>
+    
+  </div>
+</section>
+
+<section class="content">
+  <div class="container">
+    
+    <h2>How Fair Exchange Works</h2>
+    
+    <p>Kith uses <strong>time credits</strong> to keep exchanges balanced. Not money (too transactional). Not favors (too much guilt). Just simple hour-for-hour tracking.</p>
+    
+    <div class="highlight-box">
+      <h3>1 Hour = 1 Credit</h3>
+      <p><strong>You watch Sarah's kids for 3 hours?</strong> You earn 3 credits. Sarah now owes the circle 3 hours. She can help you, or help someone else who helps you. The balance flows naturally.</p>
+      <p><strong>Marcus teaches guitar for 1 hour?</strong> He earns 1 credit. Uses it when he needs airport rides. Different help, same credit value.</p>
+      <p><strong>You help with eldercare appointments?</strong> Time tracked. You can use those credits for childcare, meal prep, moving help—whatever your circle coordinates.</p>
+      <p style="margin-top:1.5rem;font-weight:600">The app tracks everything automatically. Nobody keeps mental tallies. No guilt. No awkwardness. Just fair exchanges over time.</p>
+    </div>
+    
+    <h2>What We Believe</h2>
+    
+    <div class="values-grid">
+      
+      <div class="value-card">
+        <h3>Infrastructure Over Goodwill</h3>
+        <p>Reciprocity needs systems, not guilt. Time tracking should be automatic. Asking for help should be frictionless.</p>
+      </div>
+      
+      <div class="value-card">
+        <h3>Diverse Reciprocity</h3>
+        <p>You watched someone's kids? They don't owe you childcare back. Maybe they help with your resume. Maybe they teach your kid guitar. Skills are currency—everyone has something valuable.</p>
+      </div>
+      
+      <div class="value-card">
+        <h3>Trust Over Algorithms</h3>
+        <p>Your friend's judgment about their cousin is worth more than a stranger's 5-star rating. Networks grow through vouching, not marketing.</p>
+      </div>
+      
+      <div class="value-card">
+        <h3>Free Coordination, Paid Options</h3>
+        <p>Time banking with your circle should always be free. But you also need the option to hire vetted professionals when your circle can't help.</p>
+      </div>
+      
+      <div class="value-card">
+        <h3>Circles Over Isolation</h3>
+        <p>Nuclear families doing it alone is a historical anomaly that's breaking us. Humans evolved to raise children in groups. Let's rebuild that.</p>
+      </div>
+      
+      <div class="value-card">
+        <h3>Privacy by Design</h3>
+        <p>Your exchanges are private. Your data is encrypted. Your circle is yours. We don't sell your information or show you ads.</p>
+      </div>
+      
+    </div>
+    
+    <div class="dark-box">
+      <h3>Our Mission</h3>
+      <p>We're not trying to optimize nuclear families. We're trying to rebuild the village structures that nuclear families replaced.</p>
+      <p><strong>We're cultivating the regenerative family movement</strong>—families that look beyond isolation and rebuild cooperative networks. Not instead of parents, but alongside them.</p>
+      <p style="margin-top:1.5rem">Our hope is simple: <strong>What if we could give people the infrastructure to rebuild what we lost?</strong> Not nostalgia for some idealized past, but practical tools to coordinate the 8-15 people who want to help but don't know how.</p>
+    </div>
+    
+  </div>
+</section>
+
+<section class="team-section">
+  <h2>Built by Parents, For Parents</h2>
+  <p>We're a small team based in Richmond, VA and Washington, DC. We've experienced the isolation of modern parenting firsthand. We've asked for too many favors. We've kept mental tallies. We've paid too much for babysitters.</p>
+  <p>We believe there's a better way. And we're building it.</p>
+</section>
+
+<section class="cta-section">
+  <h2>Ready to Rebuild Your Village?</h2>
+  <p>Join the waitlist. Get early access. Help us build what families actually need.</p>
+  <a href="index.html#download" class="cta-button">Join Waitlist →</a>
+</section>
+
+</body>
+</html>
