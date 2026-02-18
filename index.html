@@ -59,11 +59,12 @@ h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
 .how-section{padding:6rem 2rem;background:linear-gradient(135deg,var(--sage),var(--deep-green));color:var(--warm-white)}
 .how-section h2{font-size:2.5rem;text-align:center;margin-bottom:1rem;font-style:italic;color:var(--warm-white)}
 .how-intro{text-align:center;font-size:1.2rem;max-width:800px;margin:0 auto 4rem;opacity:0.95}
-.flow-steps{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr);gap:2rem}
-.flow-step{background:rgba(255,255,255,0.15);padding:2rem;border-radius:20px;backdrop-filter:blur(10px);text-align:center}
-.step-num{width:50px;height:50px;background:var(--clay);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;margin:0 auto 1rem}
-.flow-step h3{font-size:1.4rem;margin-bottom:0.8rem;color:var(--warm-white)}
-.flow-step p{font-size:0.95rem;line-height:1.6;opacity:0.95}
+.flow-steps{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.flow-step{background:rgba(255,255,255,0.12);padding:2.5rem 2rem;border-radius:20px;backdrop-filter:blur(10px);text-align:center;border:1px solid rgba(255,255,255,0.1);transition:all 0.3s ease}
+.flow-step:hover{background:rgba(255,255,255,0.2);transform:translateY(-3px)}
+.step-num{width:44px;height:44px;background:var(--clay);color:var(--warm-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;margin:0 auto 1rem;box-shadow:0 3px 10px rgba(201,93,61,0.3)}
+.flow-step h3{font-size:1.3rem;margin-bottom:0.6rem;color:var(--warm-white)}
+.flow-step p{font-size:0.95rem;line-height:1.6;opacity:0.9}
 
 .examples-section{padding:6rem 2rem;background:var(--cream)}
 .examples-section h2{font-size:2.5rem;color:var(--clay);text-align:center;margin-bottom:1.5rem;font-style:italic}
@@ -94,11 +95,12 @@ h1,h2,h3{font-family:'Fraunces',serif;font-weight:700;line-height:1.2}
 @media (max-width:768px){
 .header-content{flex-direction:column}
 .help-grid{grid-template-columns:repeat(2,1fr)}
-.paths-grid,.flow-steps,.examples-grid{grid-template-columns:1fr}
+.paths-grid,.examples-grid{grid-template-columns:1fr}
+.flow-steps{grid-template-columns:repeat(2,1fr)}
 .compare-cols{grid-template-columns:1fr}
 }
-@media (min-width:481px) and (max-width:768px){
-.flow-steps{grid-template-columns:repeat(2,1fr)}
+@media (max-width:480px){
+.flow-steps{grid-template-columns:1fr}
 }
 </style>
 </head>
